@@ -24,7 +24,7 @@ CREATE TABLE posts(
 	user_id int(11) not null,
 	post_title varchar(100) not null,
     post_body Text not null,
-	create_time DATETIME default now(),
+	creation_time DATETIME default now(),
     primary key(id),
 	foreign key (user_id) references users(id)
 	
@@ -32,11 +32,12 @@ CREATE TABLE posts(
 
 
 CREATE TABLE comments(
+	id int(11) not null auto_increment,
 	user_id int(11) not null,
 	post_id int(11) not null,
     comment_body Text not null,
-	create_time DATETIME default now(),
-    primary key(user_id, post_id),
+	creation_time DATETIME default now(),
+    primary key(id),
 	foreign key (user_id) references users(id),
 	foreign key (post_id) references posts(id)
 );
