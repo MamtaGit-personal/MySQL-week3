@@ -10,7 +10,7 @@ CREATE TABLE users(
 	id int(11) not null auto_increment,
 	username varchar(30) not null,
 	password varchar(15) not null,
-	email varchar(50) not null,
+	email varchar(384) not null,
 	phone_number varchar(16) not null,
 	first_name varchar(20),
 	last_name varchar(20),
